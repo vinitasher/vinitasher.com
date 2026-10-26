@@ -1,0 +1,1 @@
+{"name":"vinitasher-website","version":"1.0.0","private":true,"type":"module","scripts":{"dev":"wrangler dev","deploy":"wrangler deploy","check":"node --check public/app.js && node --check src/worker.js && node --test","dry-run":"wrangler deploy --dry-run"},"devDependencies":{"wrangler":"4.152.0"},"overrides":{"undici":"7.30.1"}}
