@@ -46,3 +46,7 @@ Inspired by the interactive résumé and AI-guide concept of [santifer/cv-santia
 ## Deployment maintenance
 
 Deployments are manual from this checkout. To update: edit, run checks, review locally, commit/push, then deploy. No GitHub Actions credentials or automatic deployment are configured.
+
+## Contact address
+
+The public contact address is `hello@vinitasher.com`. Cloudflare Email Routing forwards it to the owner’s destination inbox, configured in the Cloudflare dashboard rather than this repository. The destination must be verified before delivery works. This is inbound forwarding; it does not configure Gmail to send replies as the domain address.

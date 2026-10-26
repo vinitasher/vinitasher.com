@@ -32,7 +32,7 @@ export async function chat(request, env) {
     return json({answer:result.response.trim()});
   } catch {
     console.error(JSON.stringify({event:'chat_unavailable'}));
-    return json({error:'The AI guide is taking a break. Explore the site or email vinitasher@gmail.com.'},503);
+    return json({error:'The AI guide is taking a break. Explore the site or email hello@vinitasher.com.'},503);
   }
 }
 export default {
