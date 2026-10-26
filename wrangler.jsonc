@@ -4,16 +4,49 @@
   "account_id": "24d83218826bb4597d09ede1796f0745",
   "main": "src/worker.js",
   "compatibility_date": "2026-10-26",
-  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/api/*"] },
-  "ai": { "binding": "AI" },
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "ai": {
+    "binding": "AI"
+  },
   "ratelimits": [
-    { "name": "CHAT_LIMIT", "namespace_id": "1026202601", "simple": { "limit": 5, "period": 60 } },
-    { "name": "TOTAL_LIMIT", "namespace_id": "1026202602", "simple": { "limit": 30, "period": 60 } }
+    {
+      "name": "CHAT_LIMIT",
+      "namespace_id": "1026202601",
+      "simple": {
+        "limit": 5,
+        "period": 60
+      }
+    },
+    {
+      "name": "TOTAL_LIMIT",
+      "namespace_id": "1026202602",
+      "simple": {
+        "limit": 30,
+        "period": 60
+      }
+    }
   ],
-  "observability": { "enabled": true, "head_sampling_rate": 0.1, "traces": { "enabled": true, "head_sampling_rate": 0.1 } },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 0.1,
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.1
+    }
+  },
   "workers_dev": true,
   "routes": [
-    { "pattern": "vinitasher.com", "custom_domain": true },
-    { "pattern": "www.vinitasher.com", "custom_domain": true }
+    {
+      "pattern": "vinitasher.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.vinitasher.com",
+      "custom_domain": true
+    }
   ]
 }

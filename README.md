@@ -22,7 +22,7 @@ npm run dry-run
 npm run deploy
 ```
 
-The pinned Wrangler version in `package-lock.json` is used by these scripts. `wrangler.jsonc` targets the `vinitasher-portfolio` Worker in Vinit's Cloudflare account, with custom domains `vinitasher.com` and `www.vinitasher.com`. The Worker redirects www to the apex. Deployment can create DNS records and certificates through Cloudflare's custom-domain integration. It does not change other subdomains or mail records.
+The pinned Wrangler version in `package-lock.json` is used by these scripts. `wrangler.jsonc` targets the `vinitasher-portfolio` Worker in Vinit's Cloudflare account, with custom domains `vinitasher.com` and `www.vinitasher.com`. The Worker redirects www to the apex. Deployment can create DNS records and certificates through Cloudflare's custom-domain integration. It does not change other subdomains or mail records. Existing `/baby-shower`, `/middlefield`, `/notes`, `/fire`, and `/exercises` links redirect to their retained Pages site. The existing Cloudflare `/projectx*` Worker route is retained.
 
 ## Edit
 

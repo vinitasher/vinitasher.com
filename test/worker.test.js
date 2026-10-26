@@ -19,3 +19,5 @@ test('sends only current question and curated public context',async()=>{const e=
 test('returns graceful unavailable response without leaking upstream errors',async()=>{const e=env();e.AI.run=async()=>{throw new Error('private upstream details')};const r=await chat(request({message:'Hello'}),e);assert.equal(r.status,503);assert.ok(!(await r.text()).includes('private upstream details'));});
 test('www redirect preserves path and query',async()=>{const r=await worker.fetch(new Request('https://www.vinitasher.com/privacy.html?test=1'),{});assert.equal(r.status,301);assert.equal(r.headers.get('Location'),'https://vinitasher.com/privacy.html?test=1');});
 test('unknown API routes return 404',async()=>{assert.equal((await worker.fetch(new Request('https://vinitasher.com/api/missing'),{})).status,404);});
+
+test('legacy pages remain reachable without affecting the portfolio',async()=>{const r=await worker.fetch(new Request('https://vinitasher.com/middlefield/?test=1'),{});assert.equal(r.status,302);assert.equal(r.headers.get('Location'),'https://vinitasher-github-io.pages.dev/middlefield/?test=1');});

@@ -39,6 +39,10 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.hostname === 'www.vinitasher.com') { url.hostname='vinitasher.com'; return Response.redirect(url.toString(),301); }
+    if (/^\/(baby-shower|middlefield|notes|fire|exercises)(\/|$)/.test(url.pathname)) {
+      const legacy = new URL(request.url); legacy.hostname = 'vinitasher-github-io.pages.dev';
+      return Response.redirect(legacy.toString(), 302);
+    }
     if (url.pathname === '/api/chat') return chat(request,env);
     if (url.pathname.startsWith('/api/')) return json({error:'Not found.'},404);
     return env.ASSETS.fetch(request);
